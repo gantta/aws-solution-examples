@@ -14,6 +14,7 @@ Create a `envVariables.tfvars` file in the root directory with the following var
 
     AWS_ACCESS_KEY_ID=""
     AWS_SECRET_ACCESS_KEY=""
+    GITHUB_PAT=""
 
 1.	`cd .\Terraform\`
 2.  `terraform init`

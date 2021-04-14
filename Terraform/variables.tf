@@ -10,6 +10,12 @@ variable "AWS_SECRET_ACCESS_KEY" {
   description = "The AWS terraform user secret key"
 }
 
+variable "GITHUB_PAT" {
+  type = string
+  default = ""
+  description = "The Github personal access token for use in CodePipeline"
+}
+
 variable "environment" {
   type = string
   default = "dev"

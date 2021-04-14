@@ -9,8 +9,20 @@ locals {
     Name          = var.prefix
     Environment   = var.environment
     Project       = var.prefix
-    rebootAllowed = 1
   }
+}
+
+module "code_pipeline" {
+  source = "./modules/code_pipeline"
+  name = local.product_tags.Project
+  github_oauth_token = var.GITHUB_PAT
+  repository_owner = "gantta"
+  repository_name = "aws-solution-examples"
+  project_name = local.product_tags.Project
+  tags = local.product_tags
+  AWS_ACCESS_KEY_ID = var.AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY = var.AWS_SECRET_ACCESS_KEY
+  GITHUB_PAT = var.GITHUB_PAT
 }
 
 resource "aws_resourcegroups_group" "main" {

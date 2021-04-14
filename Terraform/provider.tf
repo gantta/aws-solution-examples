@@ -5,6 +5,10 @@ terraform {
       source = "hashicorp/aws"
       version = "3.36.0"
     }
+    github = {
+      source = "integrations/github"
+      version = "4.8.0"
+    }
   }
   backend "s3" {
       bucket = "gantta-terraform"
@@ -18,3 +22,7 @@ provider "aws" {
   region = var.region
 }
 
+provider "github" {
+  token = var.GITHUB_PAT
+  owner = "gantta"
+}

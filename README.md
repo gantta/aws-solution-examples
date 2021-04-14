@@ -4,6 +4,8 @@ A template for quickly spinning up an AWS full stack
 ### Tech Stack
 [AWS](https://console.aws.amazon.com) | [Terraform](https://www.terraform.io/downloads.html) | [AWS Amplify Framework](https://docs.amplify.aws/cli/start/install)
 
+[![AWSBadge](https://codefactory-us-east-2-prod-default-build-badges.s3-us-east-2.amazonaws.com/unknown.svg)](https://codebuild.us-east-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiSSt2MEJ5allleFRteUo5Z2FuT1pqWXRndjB5MHJZcXhQdFdIbElQM2VVcXpzRGZYbmtHdkpEcDlaNjlFZ0JpRGE0MDJMNlAwTkFTUzlnWTJQdkU1MUVrPSIsIml2UGFyYW1ldGVyU3BlYyI6IjB4a3FjVEZNbzdaS1h0OFEiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
+
 
 ## Getting Started with Terraform
 For local devlopment and testing

@@ -1,5 +1,5 @@
 # aws-solution-examples
-A temlate for quickly spinning up an AWS full stack
+A template for quickly spinning up an AWS full stack
 
 ### Tech Stack
 [AWS](https://console.aws.amazon.com) | [Terraform](https://www.terraform.io/downloads.html) | [AWS Amplify Framework](https://docs.amplify.aws/cli/start/install)

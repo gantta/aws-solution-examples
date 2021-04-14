@@ -217,26 +217,10 @@ data "aws_iam_policy_document" "policy" {
     actions = [
       "codebuild:BatchGetBuilds",
       "codebuild:StartBuild",
-    ]
-
-    resources = ["*"]
-  }
-
-  statement {
-    effect = "Allow"
-
-    actions = [
-      "logs:CreateLogStream"
-    ]
-
-    resources = ["*"]
-  }
-
-  statement {
-    effect = "Allow"
-
-    actions = [
-      "iam:PassRole",
+      "logs:CreateLogStream",
+      "logs:CreateLogGroup",
+      "logs:PutLogEvents",
+      "iam:PassRole"
     ]
 
     resources = ["*"]

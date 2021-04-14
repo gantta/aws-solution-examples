@@ -11,6 +11,7 @@ phases:
       - mv terraform /usr/local/bin/
   build:
     commands:
+      - aws sts get-caller-identity
       - cd Terraform
       - terraform --version
       - terraform init -input=false

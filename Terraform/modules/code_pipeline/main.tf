@@ -207,7 +207,9 @@ data "aws_iam_policy_document" "policy" {
 
     resources = [
       aws_s3_bucket.pipeline_bucket.arn,
-      "${aws_s3_bucket.pipeline_bucket.arn}/*"
+      "${aws_s3_bucket.pipeline_bucket.arn}/*",
+      "arn:aws:s3:::gantta-terraform",
+      "arn:aws:s3:::gantta-terraform/*"
     ]
   }
 

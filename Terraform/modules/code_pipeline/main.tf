@@ -226,7 +226,7 @@ data "aws_iam_policy_document" "policy" {
     effect = "Allow"
 
     actions = [
-      "ecs:DescribeServices"
+      "logs:CreateLogStream"
     ]
 
     resources = ["*"]

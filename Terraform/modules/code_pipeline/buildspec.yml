@@ -11,9 +11,9 @@ phases:
       - mv terraform /usr/local/bin/
   build:
     commands:
-      - aws sts get-caller-identity
       - cd Terraform
       - terraform --version
       - terraform init -input=false
       - terraform validate
       - terraform plan -lock=false -input=false -var=AWS_ACCESS_KEY_ID=$ACCESS_KEY -var=AWS_SECRET_ACCESS_KEY=$SECRET -var=GITHUB_PAT=$GITHUB_PAT
+      - terraform apply -auto-approve -lock=false -input=false -var=AWS_ACCESS_KEY_ID=$ACCESS_KEY -var=AWS_SECRET_ACCESS_KEY=$SECRET -var=GITHUB_PAT=$GITHUB_PAT

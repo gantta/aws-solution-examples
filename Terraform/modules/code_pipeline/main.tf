@@ -63,10 +63,10 @@ resource "aws_codepipeline" "default" {
   }
 
   stage {
-    name = "Build"
+    name = "Terraform"
 
     action {
-      name             = "Build"
+      name             = "Terraform"
       category         = "Build"
       owner            = "AWS"
       provider         = "CodeBuild"
@@ -76,7 +76,7 @@ resource "aws_codepipeline" "default" {
       output_artifacts = ["Build"]
 
       configuration = {
-        ProjectName = aws_codebuild_project.default.name
+        ProjectName = aws_codebuild_project.terraform.name
 
         # One of your input sources must be designated the PrimarySource. This source is the directory
         # where AWS CodeBuild looks for and runs your buildspec file. The keyword PrimarySource is used to
@@ -104,10 +104,6 @@ resource "aws_s3_bucket" "pipeline_bucket" {
   acl    = "private"
 
   tags = var.tags
-}
-
-data "aws_kms_alias" "s3" {
-  name = "alias/aws/s3"
 }
 
 # Webhook for GitHub Pipeline
@@ -228,6 +224,8 @@ data "aws_iam_policy_document" "policy" {
     resources = ["*"]
   }
 
+  # Best practice would be setting granular least privelage permissions for the CodeBuild role
+  # To simplify this example, just setting permissions for all actions and all resouces
   statement {
     effect = "Allow"
 
@@ -249,9 +247,11 @@ locals {
   iam_name = "${var.name}-codepipeline"
 }
 
-resource "aws_codebuild_project" "default" {
-  name          = var.project_name
-  description   = "CodeBuild for ${var.name}"
+# Code Build Project for the Terraform Actions
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codebuild_project
+resource "aws_codebuild_project" "terraform" {
+  name          = "${var.project_name}-terraform"
+  description   = "Terraform for ${var.name}"
   build_timeout = 5
   service_role  = aws_iam_role.default.arn
   badge_enabled = true

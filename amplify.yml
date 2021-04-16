@@ -4,15 +4,16 @@ frontend:
     preBuild:
       commands:
         - cd frontend
+        - npm install
     # IMPORTANT - Please verify your build commands
     build:
       commands:
-        - npm install
         - npm run build
   artifacts:
     # IMPORTANT - Please verify your build output directory
-    baseDirectory: /
+    baseDirectory: /build
     files:
       - '**/*'
   cache:
-    paths: []
+    paths: 
+      - node_modules/**/*

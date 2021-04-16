@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "awssolutionexamples6b193a23": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

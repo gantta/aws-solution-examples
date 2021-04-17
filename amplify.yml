@@ -3,7 +3,7 @@ backend:
   phases:
     preBuild:
       commands:
-        - npm install -g @aws-amplify/cli@4.29.4 # pinned known working version
+        - npm install -g @aws-amplify/cli@4.48.0 # pinned known working version
     build:
       commands:
         - '# Execute Amplify CLI with the helper script'

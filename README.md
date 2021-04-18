@@ -29,3 +29,5 @@ Create a `envVariables.tfvars` file in the root directory with the following var
 * Install the latest Amplify CLI version
     `npm install -g @aws-amplify/cli`
 * Follow this [guide](https://docs.amplify.aws/cli/start/install#configure-the-amplify-cli) to configure Amplify
+* Configuration of React app located in `frontend` dir. 
+* Create a simple web application using AWS Amplify [guide](https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/)

@@ -45,11 +45,18 @@ resource "aws_resourcegroups_group" "main" {
 JSON
   }
 
-  tags = var.tags
+  tags = local.product_tags
 }
 
 module "networking" {
   source = "./modules/networking"
   region = var.region
   tags   = local.product_tags
+}
+
+module "route_53" {
+  source = "./modules/route_53"
+  zone_name = "${var.prefix}.com"
+  amplify_url = "d1q4srdzfdsvtj.cloudfront.net"
+  tags = local.product_tags
 }

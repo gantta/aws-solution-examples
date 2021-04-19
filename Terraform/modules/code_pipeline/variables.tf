@@ -74,18 +74,21 @@ variable "iam_path" {
 
 variable "AWS_ACCESS_KEY_ID" {
   type = string
+  sensitive = true
   default = ""
   description = "The AWS terraform user access key"
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
   type = string
+  sensitive = true
   default = ""
   description = "The AWS terraform user secret key"
 }
 
 variable "GITHUB_PAT" {
   type = string
+  sensitive = true
   default = ""
   description = "The Github personal access token for use in CodePipeline"
 }

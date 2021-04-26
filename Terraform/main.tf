@@ -57,6 +57,6 @@ module "networking" {
 module "route_53" {
   source = "./modules/route_53"
   zone_name = "${var.prefix}.com"
-  amplify_url = "d1q4srdzfdsvtj.cloudfront.net"
+  amplify_url = "d1jklk1musytxt.cloudfront.net"
   tags = local.product_tags
 }
